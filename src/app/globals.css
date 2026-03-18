@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* 
+  Custom Theme Configuration
+  These variables will automatically generate Tailwind utilities.
+  e.g., bg-background, text-foreground, border-ui, text-primary
+*/
+@theme {
+    /* Core Background Colors */
+    --color-background: #080d14;
+    --color-panel: #0e1520;
+
+    /* Structural UI Colors */
+    --color-ui: #1a2a3a; /* Use for borders, dividers, hover states */
+
+    /* Accents */
+    --color-primary: #4ac9a0; /* Teal Accent for CTAs and interactive states */
+    --color-accent: #c0854a; /* Warm Amber for badges and highlights */
+
+    /* Text Colors */
+    --color-foreground: #e0e8f0; /* Primary text (Ghost White) */
+    --color-muted: #556678; /* Secondary text */
+}
+
+@layer base {
+    * {
+        border-color: var(--color-ui);
+    }
+
+    body {
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        /* Improve text rendering on dark themes */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Optional custom utility for nice glowing text or elements */
+@layer utilities {
+    .glow-primary {
+        text-shadow: 0 0 10px rgba(74, 201, 160, 0.4);
+    }
+    .glow-accent {
+        text-shadow: 0 0 10px rgba(192, 133, 74, 0.4);
+    }
+}
